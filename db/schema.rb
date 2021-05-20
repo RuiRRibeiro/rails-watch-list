@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2021_05_20_094924) do
   enable_extension "plpgsql"
 
   create_table "bookmarks", force: :cascade do |t|
-    t.string "name"
+    t.string "comment"
     t.bigint "movie_id", null: false
     t.bigint "list_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2021_05_20_094924) do
   end
 
   create_table "lists", force: :cascade do |t|
-    t.string "comment"
+    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2021_05_20_094924) do
     t.string "title"
     t.text "overview"
     t.string "poster_url"
-    t.integer "rating"
+    t.float "rating"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
