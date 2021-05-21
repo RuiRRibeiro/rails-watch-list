@@ -1,1 +1,7 @@
-new.html.erb
+<h1>NEW BOOKMARK</h1>
+<%= simple_form_for [@list, @bookmark] do |f| %>
+<%= f.association :movie %>
+<%= f.input :comment %>
+<%= f.submit %>
+<% end %>
+<%= link_to "BACK TO LISTS", lists_path(@list) %>
